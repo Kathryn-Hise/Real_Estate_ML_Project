@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Xillow Xestimator</title>
+<style>
+body {
+	background-color: #181818;
+	color: #818181;
+	font-family: Arial;
+}
+input {
+	background-color: #313131;
+	border: 2px solid #ff9900;
+	color: #ff9900;
+}
+input:hover {
+	background-color: #454545;
+}
+input:focus {
+	background-color: #181818;
+	border: 2px solid #ff9900;
+	outline: none;
+	color: #ff9900;
+}
+#sub{
+	color:#ff9900;
+	background-color: #313131;
+	padding:8px 15px;
+	border: 2px solid #ff9900;
+}
+#sub:hover {
+	background-color: #454545;
+	color: #ff9900;
+}
+#sub:active {
+	background-color: #181818;
+	color: #ff9900;
+}
+p {
+	text-align: justify;
+}
+p.frm {
+	text-align: center;
+}
+h1 {
+	text-align:center;
+}
+#qmark {
+	color:#818181;
+	background-color:#313131;
+	padding:4px;
+	border-radius:8px;
+}
+.parg {
+	margin: auto;
+	width:550px;
+	background-color:#313131;
+	padding:10px;
+	border-radius:10px;
+}
+</style>
+</head>
+<body>
+<h1>Xillow Xestimator</h1>
+<div class=parg>
+<p>Welcome to Xillow! Enter the following values to receive a free xestimate of your home's value. If you are unsure of any of these values, just leave them blank, and the Xestimator will Xestimate the values for you!</p>
+</div>
+<form onsubmit="testRes()" name=mform>
+<p class=frm> Square Footage:
+	<input type="number" name="GrLivArea" size="15" maxlength="7" value=''>
+</p>
+<p class=frm> Bedrooms:
+	<input type="number" name="Bedrooms" size="15" maxlength="1" value=''>
+</p>
+<p class=frm> Garage Cars:
+	<input type="number" name="GarageCars" size="15" maxlength="7" value=''>
+</p>
+<p class=frm> Year Built:
+	<input type="number" name="YearBuilt" size="15" maxlength="7" value=''>
+</p>
+<p class=frm> Lot Area:
+	<input type="number" name="LotArea" size="15" maxlength="7" value=''>
+</p>
+<p class=frm>
+	<input id=sub type="submit" value="Submit"/>
+</p>
+</form>
+<script>
+function testRes() {
+	var grlivarea = mform.GrLivArea.value;
+	var yrblt = mform.YearBuilt.value;
+	var grgcars = mform.GarageCars.value;
+	var lotarea = mform.LotArea.value;
+	var beds = mform.Bedrooms.value;
+	var offset = -1437791;
+	var bedconst = -1690;
+	var grlivconst = 98;
+	var yrbltcost = 748;
+	var grgcarsconst = 2014;
+	var lotareaconst = 76;
+	if (grlivarea == 0) {
+		grlivarea = 1515;
+	}
+	if (yrblt == 0) {
+		yrblt = 1971;
+	}
+	if (lotarea == 0) {
+		lotarea = 10516;
+	}
+	var totalPrice = grlivconst*grlivarea + yrbltcost*yrblt + grgcarsconst*grgcars + lotareaconst*lotarea + bedconst*beds - offset;
+	totalPrice = parseInt(totalPrice).toLocaleString('en-US');
+	alert ("Your estimated value is $" + totalPrice);
+}
+</script>
+</body>
+</html>
