@@ -6,7 +6,7 @@ Kathryn Hise, Colton Herrold, Dawson Cate
 # Final Product
 * [Google Slides Presentation Link](https://docs.google.com/presentation/d/1uSu5OvXHm6N1dxKCNVL-bsX35n5sWYn7F-Od0Fk_508/edit?usp=sharing)
 
-* [Front Facing Interface](XillowBackup.html)
+* [User Interface](XillowBackup.html)
 
 # Code
 * [Cleaning Code](Cleaning_Code.ipynb)
